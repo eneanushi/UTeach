@@ -1,37 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BackgroundCircles from './ui/background-circles';
+import BackgroundBoxes from './ui/background-boxes';
 
-// Triangle Background Component
-const BackgroundTriangles = () => {
-  return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 [perspective:1000px]">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-[100px] h-[100px] opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              transform: `
-                rotateX(${Math.random() * 360}deg)
-                rotateY(${Math.random() * 360}deg)
-                translateZ(${Math.random() * 500}px)
-              `,
-              animation: `float ${10 + Math.random() * 20}s linear infinite`,
-              animationDelay: `${-Math.random() * 20}s`,
-            }}
-          >
-            <div className="w-full h-full border-[2px] border-purple-500/30
-                          [clip-path:polygon(50%_0%,100%_100%,0%_100%)]
-                          animate-pulse"></div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+
 
 // Header Component
 const Header = () => {
@@ -97,7 +68,7 @@ const ProjectOverview = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-12 relative overflow-hidden">
       {/* Background Elements */}
-      <BackgroundTriangles />
+      <BackgroundBoxes />
       
       {/* Header */}
       <Header />
