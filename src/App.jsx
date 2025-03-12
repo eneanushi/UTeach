@@ -6,6 +6,7 @@ import OpeningAnimation from './components/OpeningAnimation'
 import ComingSoon from './components/ComingSoon'
 import ProjectOverview from './components/ProjectOverview'
 import StemMinorPrograms from './components/StemMinorPrograms'
+import Presentation from './components/Presentation'
 import Header from './components/shared/Header'
 
 // Hero Component
@@ -331,6 +332,7 @@ const App = () => {
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/project-overview" element={<ProjectOverview />} />
         <Route path="/stem-minor" element={<StemMinorPrograms />} />
+        <Route path="/presentation" element={<Presentation />} />
       </Routes>
     </Router>
   )

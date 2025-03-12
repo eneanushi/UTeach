@@ -92,6 +92,20 @@ const Header = () => {
               STEM Minor
             </Link>
           </li>
+          <li>
+            <Link 
+              to="/presentation" 
+              className="text-cyan-300 transition-all duration-300
+                       px-4 py-2 rounded-full border border-cyan-500/20
+                       hover:border-cyan-400/50 hover:bg-cyan-500/10
+                       [text-shadow:_0_0_10px_rgb(6_182_212_/_40%)]
+                       hover:[text-shadow:_0_0_15px_rgb(6_182_212_/_60%),_0_0_30px_rgb(6_182_212_/_30%)]
+                       relative after:absolute after:inset-0 after:bg-cyan-400/5 after:blur-sm after:opacity-0 
+                       hover:after:opacity-100 after:transition-opacity after:duration-300"
+            >
+              Presentation
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
