@@ -137,11 +137,12 @@ const Features = () => {
   ]
 
   return (
-    <div className="py-20 px-6">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+    <div className="features-container">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 fade-in
+                    [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
         What you get when you participate
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (
           <FeatureCard key={index} {...feature} index={index} />
         ))}
@@ -154,10 +155,12 @@ const Features = () => {
 const ProgramCard = ({ image, title, description, index }) => (
   <div className="program-card card hover-lift scale-in"
        style={{ animationDelay: `${index * 0.1}s` }}>
-    <div
-      className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-      style={{ backgroundImage: `url("${image}")` }}
-    ></div>
+    <div className="image-container">
+      <div
+        className="w-full bg-center bg-no-repeat aspect-video bg-cover"
+        style={{ backgroundImage: `url("${image}")` }}
+      ></div>
+    </div>
     <div className="content">
       <h3 className="title">{title}</h3>
       <p className="description">{description}</p>
@@ -190,20 +193,20 @@ const Programs = () => {
   ]
 
   return (
-    <div className="animated-bg">
-      <h1 className="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-6 fade-in
+    <div className="programs-container">
+      <h1 className="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-6 pt-3 fade-in
                     [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
         Our programs
       </h1>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
         {programs.map((program, index) => (
           <ProgramCard key={index} {...program} index={index} />
         ))}
-        <div className="flex flex-col gap-3 pb-3 fade-in" style={{animationDelay: '0.6s'}}>
-          <button className="btn-primary program-btn flex items-center justify-center">
-            <span className="truncate">Explore All Programs</span>
-          </button>
-        </div>
+      </div>
+      <div className="flex justify-center mt-6 fade-in" style={{animationDelay: '0.6s'}}>
+        <button className="btn-primary program-btn flex items-center justify-center">
+          <span className="truncate">Explore All Programs</span>
+        </button>
       </div>
     </div>
   )

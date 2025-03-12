@@ -42,10 +42,11 @@
 
   /* Card styles */
   .card {
-    @apply bg-black/70 backdrop-blur-sm border border-purple-500/30 transition-all duration-300;
+    @apply bg-black/70 backdrop-blur-sm border border-purple-500/30 transition-all duration-300 rounded-[2rem];
     min-height: 380px;
     transform: translateY(0);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
   }
 
   .card:hover {
@@ -141,12 +142,28 @@
 
   /* Feature card specific styles */
   .feature-card {
-    @apply bg-black/60;
+    @apply bg-black/60 rounded-[2rem];
     min-height: 400px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.1), transparent);
+    border-radius: inherit;
+    z-index: 0;
+  }
+
+  .feature-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .feature-card .icon-container {
@@ -173,8 +190,9 @@
 
   /* Program card specific styles */
   .program-card {
-    @apply bg-black/60;
+    @apply bg-black/60 rounded-[2rem];
     min-height: 420px;
+    overflow: hidden;
   }
 
   .program-card .content {
@@ -197,6 +215,24 @@
     @apply text-gray-300;
     line-height: 1.6;
     font-size: 1.05rem;
+  }
+
+  /* Image container in program card */
+  .program-card .image-container {
+    @apply rounded-[1.5rem] overflow-hidden;
+    margin: -1px;
+  }
+
+  /* Programs section container */
+  .programs-container {
+    @apply rounded-[2rem] bg-black/40 backdrop-blur-md p-6;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+  }
+
+  /* Features section container */
+  .features-container {
+    @apply rounded-[2rem] bg-black/40 backdrop-blur-md p-6;
+    border: 1px solid rgba(168, 85, 247, 0.2);
   }
 
   /* Navigation styles */
