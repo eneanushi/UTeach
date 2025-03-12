@@ -34,67 +34,52 @@ const OpeningAnimation = ({ onComplete }) => {
       <BackgroundCircles />
       <div className="relative z-10 flex flex-col items-center justify-center gap-8 px-4 text-center">
         {/* Initial text group - only show if not showing final quote */}
-        {!showFinalQuote && (
-          <div className="transition-all duration-1000">
-            {/* UTeach Program */}
-            <h1 
-              className={`text-7xl font-black transition-all duration-1000 mb-8
-                         ${textPhase >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
-                         text-white
-                         [text-shadow:_0_0_20px_rgb(124_58_237_/_80%),_0_0_40px_rgb(124_58_237_/_60%),_0_0_80px_rgb(124_58_237_/_40%)]
-                         animate-[textGlow_2s_ease-in-out_infinite]`}
-            >
-              UTeach Program
-            </h1>
-            
-            {/* Supported by University */}
-            <h2 
-              className={`text-4xl font-bold text-center transition-all duration-1000 max-w-3xl mb-8
-                         ${textPhase >= 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
-                         text-white
-                         [text-shadow:_0_0_15px_rgb(124_58_237_/_70%),_0_0_30px_rgb(124_58_237_/_50%),_0_0_60px_rgb(124_58_237_/_30%)]`}
-            >
-              Supported by University of Massachusetts Lowell
-            </h2>
-
-            {/* By Enea Nushi */}
-            <p 
-              className={`text-2xl transition-all duration-1000
-                         ${textPhase >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
-                         text-white
-                         [text-shadow:_0_0_10px_rgb(124_58_237_/_60%),_0_0_20px_rgb(124_58_237_/_40%),_0_0_40px_rgb(124_58_237_/_20%)]`}
-            >
-              by Enea Nushi
-            </p>
-          </div>
-        )}
-
-        {/* Final quote - only show after initial text has faded */}
-        {showFinalQuote && (
+        <div className={`transition-all duration-1000 ${!showFinalQuote ? 'opacity-100' : 'opacity-0'}`}>
+          {/* UTeach Program */}
+          <h1 
+            className={`text-7xl font-black transition-all duration-1000 mb-8
+                       ${textPhase >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
+                       text-white
+                       [text-shadow:_0_0_20px_rgb(124_58_237_/_80%),_0_0_40px_rgb(124_58_237_/_60%),_0_0_80px_rgb(124_58_237_/_40%)]`}
+          >
+            UTeach Program
+          </h1>
+          
+          {/* Supported by University */}
           <h2 
-            className={`text-6xl font-bold text-center transition-all duration-1000 max-w-4xl
-                       opacity-0 scale-90 animate-[fadeInScale_1s_ease-out_forwards]
+            className={`text-4xl font-bold text-center transition-all duration-1000 max-w-3xl mb-8
+                       ${textPhase >= 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
+                       text-white
+                       [text-shadow:_0_0_15px_rgb(124_58_237_/_70%),_0_0_30px_rgb(124_58_237_/_50%),_0_0_60px_rgb(124_58_237_/_30%)]`}
+          >
+            Supported by University of Massachusetts Lowell
+          </h2>
+
+          {/* By Enea Nushi */}
+          <p 
+            className={`text-2xl transition-all duration-1000
+                       ${textPhase >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
+                       text-white
+                       [text-shadow:_0_0_10px_rgb(124_58_237_/_60%),_0_0_20px_rgb(124_58_237_/_40%),_0_0_40px_rgb(124_58_237_/_20%)]`}
+          >
+            by Enea Nushi
+          </p>
+        </div>
+
+        {/* Final quote */}
+        <div className={`transition-all duration-1000 absolute ${showFinalQuote ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+          <h2 
+            className={`text-6xl font-bold text-center max-w-4xl
                        text-white
                        [text-shadow:_0_0_20px_rgb(124_58_237_/_80%),_0_0_40px_rgb(124_58_237_/_60%),_0_0_80px_rgb(124_58_237_/_40%)]
                        animate-[textGlow_2s_ease-in-out_infinite]`}
           >
             AI is shaping industries, but teachers shape humanity
           </h2>
-        )}
+        </div>
       </div>
 
       <style jsx>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
         @keyframes textGlow {
           0%, 100% {
             text-shadow: 0 0 20px rgba(124, 58, 237, 0.8),
