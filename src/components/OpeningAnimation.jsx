@@ -5,6 +5,7 @@ const OpeningAnimation = ({ onComplete }) => {
   const [showAnimation, setShowAnimation] = useState(true);
   const [textPhase, setTextPhase] = useState(0);
   const [showFinalQuote, setShowFinalQuote] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
     // Sequence the animations
@@ -20,6 +21,11 @@ const OpeningAnimation = ({ onComplete }) => {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for fade out
       setShowFinalQuote(true); // Show final quote
       await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      // Start exit animation
+      setIsExiting(true);
+      // Wait for exit animation to complete before hiding
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setShowAnimation(false);
       onComplete();
     };
@@ -30,7 +36,9 @@ const OpeningAnimation = ({ onComplete }) => {
   if (!showAnimation) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden">
+    <div className={`fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden
+                    transition-all duration-1000 ease-in-out
+                    ${isExiting ? 'opacity-0' : 'opacity-100'}`}>
       <BackgroundCircles />
       <div className="relative z-10 flex flex-col items-center justify-center gap-8 px-4 text-center">
         {/* Initial text group - only show if not showing final quote */}
