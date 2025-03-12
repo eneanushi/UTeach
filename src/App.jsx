@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Link } from 'react-router-dom'
 import createScrollObserver from './scroll'
 import BackgroundBoxes from './components/ui/background-boxes'
 import OpeningAnimation from './components/OpeningAnimation'
 import ComingSoon from './components/ComingSoon'
+import ProjectOverview from './components/ProjectOverview'
 
 // Header Component
 const Header = () => {
@@ -49,9 +50,16 @@ const Header = () => {
       </div>
       <nav>
         <ul className="flex gap-6">
-          <li><a href="#programs" className="text-gray-200 hover:text-purple-300 transition-colors">Programs</a></li>
-          <li><a href="#features" className="text-gray-200 hover:text-purple-300 transition-colors">Features</a></li>
-          <li><a href="#contact" className="text-gray-200 hover:text-purple-300 transition-colors">Contact</a></li>
+          <li>
+            <Link 
+              to="/project-overview" 
+              className="text-gray-200 hover:text-purple-300 transition-colors
+                       px-4 py-2 rounded-full border border-purple-500/20
+                       hover:border-purple-500/40 hover:bg-purple-500/10"
+            >
+              Project Overview
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
@@ -369,6 +377,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainContentWrapper />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
+        <Route path="/project-overview" element={<ProjectOverview />} />
       </Routes>
     </Router>
   );
