@@ -37,7 +37,8 @@ The UTeach website will provide specific information about the UTeach program, i
 
   ![Demo GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHU2NGt6M3RxcnJyNTl6MHZmamtmM3F6eTI5dXcwZmkwOXM5aHpndiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ckpKyGrGQa6bvq3BKx/giphy.gif)
 
-![Demo GIF](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjYwMzhxbWxyeTZkdnZ4NDRrYmpqNTBjdXBrYnlqaDlqMTB6YTVlOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dR2p8AZEKvQG3Qf3b7/giphy.gif)
+![Demo GIF](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG92ZnplNXY0dmE3cmNvNzZ4YmhhYTc5YjV4ODJlY2lkcHA5N2tyZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/J5Fes0JRtmjNNkow1y/giphy.gif)
+
 
 ![Demo GIF](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjYwMzhxbWxyeTZkdnZ4NDRrYmpqNTBjdXBrYnlqaDlqMTB6YTVlOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VkuaCQEE5XHSrJGxGk/giphy.gif)
 
