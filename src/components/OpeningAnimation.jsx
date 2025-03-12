@@ -25,7 +25,7 @@ const OpeningAnimation = ({ onComplete }) => {
       // Start exit animation
       setIsExiting(true);
       // Wait for exit animation to complete before hiding
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1200));
       setShowAnimation(false);
       onComplete();
     };
@@ -37,15 +37,18 @@ const OpeningAnimation = ({ onComplete }) => {
 
   return (
     <div className={`fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden
-                    transition-all duration-1000 ease-in-out
-                    ${isExiting ? 'opacity-0' : 'opacity-100'}`}>
+                    transition-all duration-[1200ms] ease-in-out transform
+                    ${isExiting ? 'opacity-0 scale-105 blur-md' : 'opacity-100 scale-100 blur-0'}`}>
       <BackgroundCircles />
-      <div className="relative z-10 flex flex-col items-center justify-center gap-8 px-4 text-center">
+      <div className={`relative z-10 flex flex-col items-center justify-center gap-8 px-4 text-center
+                      transition-all duration-[1200ms] transform
+                      ${isExiting ? 'scale-95' : 'scale-100'}`}>
         {/* Initial text group - only show if not showing final quote */}
-        <div className={`transition-all duration-1000 ${!showFinalQuote ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`transition-all duration-1000 transform
+                        ${!showFinalQuote ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           {/* UTeach Program */}
           <h1 
-            className={`text-7xl font-black transition-all duration-1000 mb-8
+            className={`text-7xl font-black transition-all duration-1000 mb-8 transform
                        ${textPhase >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
                        text-white
                        [text-shadow:_0_0_20px_rgb(124_58_237_/_80%),_0_0_40px_rgb(124_58_237_/_60%),_0_0_80px_rgb(124_58_237_/_40%)]`}
@@ -55,7 +58,7 @@ const OpeningAnimation = ({ onComplete }) => {
           
           {/* Supported by University */}
           <h2 
-            className={`text-4xl font-bold text-center transition-all duration-1000 max-w-3xl mb-8
+            className={`text-4xl font-bold text-center transition-all duration-1000 max-w-3xl mb-8 transform
                        ${textPhase >= 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
                        text-white
                        [text-shadow:_0_0_15px_rgb(124_58_237_/_70%),_0_0_30px_rgb(124_58_237_/_50%),_0_0_60px_rgb(124_58_237_/_30%)]`}
@@ -65,7 +68,7 @@ const OpeningAnimation = ({ onComplete }) => {
 
           {/* By Enea Nushi */}
           <p 
-            className={`text-2xl transition-all duration-1000
+            className={`text-2xl transition-all duration-1000 transform
                        ${textPhase >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
                        text-white
                        [text-shadow:_0_0_10px_rgb(124_58_237_/_60%),_0_0_20px_rgb(124_58_237_/_40%),_0_0_40px_rgb(124_58_237_/_20%)]`}
@@ -75,12 +78,14 @@ const OpeningAnimation = ({ onComplete }) => {
         </div>
 
         {/* Final quote */}
-        <div className={`transition-all duration-1000 absolute ${showFinalQuote ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+        <div className={`transition-all duration-1000 absolute transform
+                        ${showFinalQuote ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
           <h2 
             className={`text-6xl font-bold text-center max-w-4xl
                        text-white
                        [text-shadow:_0_0_20px_rgb(124_58_237_/_80%),_0_0_40px_rgb(124_58_237_/_60%),_0_0_80px_rgb(124_58_237_/_40%)]
-                       animate-[textGlow_2s_ease-in-out_infinite]`}
+                       animate-[textGlow_2s_ease-in-out_infinite]
+                       ${isExiting ? 'scale-95 blur-[2px]' : 'scale-100 blur-0'}`}
           >
             AI is shaping industries, but teachers shape humanity
           </h2>
