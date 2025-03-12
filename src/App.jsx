@@ -5,6 +5,7 @@ import BackgroundBoxes from './components/ui/background-boxes'
 import OpeningAnimation from './components/OpeningAnimation'
 import ComingSoon from './components/ComingSoon'
 import ProjectOverview from './components/ProjectOverview'
+import StemMinorPrograms from './components/StemMinorPrograms'
 
 // Header Component
 const Header = () => {
@@ -58,6 +59,16 @@ const Header = () => {
                        hover:border-purple-500/40 hover:bg-purple-500/10"
             >
               Project Overview
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/stem-minor" 
+              className="text-gray-200 hover:text-purple-300 transition-colors
+                       px-4 py-2 rounded-full border border-purple-500/20
+                       hover:border-purple-500/40 hover:bg-purple-500/10"
+            >
+              STEM Minor
             </Link>
           </li>
         </ul>
@@ -371,16 +382,17 @@ const MainContentWrapper = () => {
 };
 
 // Main App Component
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainContentWrapper />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/project-overview" element={<ProjectOverview />} />
+        <Route path="/stem-minor" element={<StemMinorPrograms />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
 export default App
