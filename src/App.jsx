@@ -47,14 +47,14 @@ const Hero = () => {
           The world needs more STEM teachers. Start your journey today.
         </p>
         <div className="flex gap-4 fade-in" style={{animationDelay: '0.6s'}}>
-          <button className="btn-primary px-8 py-3 neon-button">
-            Get Started
+          <button className="btn-primary px-8 py-3 neon-button group">
+            <span className="neon-text">Get Started</span>
           </button>
           <button 
             onClick={handleWatchVideo}
-            className="btn-primary px-8 py-3 neon-button"
+            className="btn-primary px-8 py-3 neon-button group"
           >
-            Watch Video
+            <span className="neon-text">Watch Video</span>
           </button>
         </div>
       </div>
@@ -215,8 +215,8 @@ const Programs = () => {
         ))}
       </div>
       <div className="flex justify-center mt-6 fade-in" style={{animationDelay: '0.6s'}}>
-        <button className="btn-primary px-8 py-3 neon-button">
-          <span className="truncate">Explore All Programs</span>
+        <button className="btn-primary px-8 py-3 neon-button group">
+          <span className="neon-text truncate">Explore All Programs</span>
         </button>
       </div>
     </div>
@@ -230,9 +230,9 @@ const CallToAction = () => {
       <h2 className="text-3xl md:text-4xl font-bold mb-8 fade-in">
         Ready to make a difference?
       </h2>
-      <button className="btn-primary px-8 py-3 neon-button" 
+      <button className="btn-primary px-8 py-3 neon-button group" 
               style={{animationDelay: '0.3s'}}>
-        Apply Now
+        <span className="neon-text">Apply Now</span>
       </button>
     </div>
   )

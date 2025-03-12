@@ -85,11 +85,11 @@ const ComingSoon = () => {
         
         {/* Button with hover effects */}
         <button 
-          className="animate-on-mount opacity-0 btn-primary text-xl px-12 py-4 neon-button"
+          className="animate-on-mount opacity-0 btn-primary text-xl px-12 py-4 neon-button group"
           onClick={handleGoBack}
         >
-          <span className="relative z-10">Go Back</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-purple-800/5
+          <span className="relative z-10 neon-text">Go Back</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-sky-600/5 to-sky-800/5
                         transform scale-x-0 group-hover:scale-x-100
                         transition-transform duration-500 origin-left"></div>
         </button>

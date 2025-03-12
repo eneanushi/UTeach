@@ -58,7 +58,7 @@
       0 0 0 4px rgba(168, 85, 247, 0.1);
   }
 
-  /* Button styles */
+  /* Updated Button styles */
   .btn-primary {
     @apply relative overflow-hidden;
     @apply bg-transparent text-white rounded-full font-bold;
@@ -70,25 +70,64 @@
     @apply hover:bg-purple-500/10;
     @apply hover:scale-105;
     @apply backdrop-blur-[1px];
+    position: relative;
   }
 
-  /* Define new specific button styles */
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      #0ea5e9 45%,
+      #60a5fa 50%,
+      #0ea5e9 55%, 
+      transparent 100%
+    );
+    background-size: 400% 100%;
+    animation: neonBeam 3s linear infinite;
+    opacity: 1;
+    z-index: -1;
+    mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 1px;
+  }
+
+  .btn-primary:hover::after {
+    opacity: 1;
+  }
+
+  @keyframes neonBeam {
+    0% {
+      background-position: 400% 0;
+      transform: rotate(0deg);
+    }
+    100% {
+      background-position: -400% 0;
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Neon button with beam effect */
   .neon-button {
     @apply relative overflow-hidden;
     @apply bg-transparent;
     @apply transition-all duration-300;
-    box-shadow: 0 0 20px rgba(168,85,247,0.2), inset 0 0 20px rgba(168,85,247,0.1);
+    box-shadow: 0 0 20px rgba(14,165,233,0.3), inset 0 0 20px rgba(14,165,233,0.2);
   }
 
   .neon-button:hover {
-    @apply bg-purple-500/10;
-    box-shadow: 0 0 25px rgba(168,85,247,0.3), inset 0 0 25px rgba(168,85,247,0.2);
+    @apply bg-sky-500/10;
+    box-shadow: 0 0 25px rgba(14,165,233,0.4), inset 0 0 25px rgba(14,165,233,0.3);
   }
 
   .neon-button::before {
     content: '';
     @apply absolute inset-0 rounded-full;
-    background: linear-gradient(90deg, rgba(168,85,247,0.1), rgba(168,85,247,0.05));
+    background: linear-gradient(90deg, rgba(14,165,233,0.1), rgba(56,189,248,0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -97,9 +136,10 @@
     opacity: 1;
   }
 
-  /* Remove the old neon button styles */
-  .neon-button-main, .neon-button-coming-soon {
-    @apply neon-button;
+  /* Add new class for text glow effect */
+  .neon-text {
+    text-shadow: 0 0 10px rgba(14,165,233,0.8),
+                 0 0 20px rgba(14,165,233,0.4);
   }
 
   /* Animation components */
