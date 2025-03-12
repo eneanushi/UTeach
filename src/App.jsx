@@ -84,10 +84,10 @@ const Hero = () => {
       <div className="flex flex-col gap-6 md:flex-1">
         <h1 className="text-4xl md:text-6xl font-black text-white leading-tight fade-in
                      [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
-          Giving Empathy Over Automation: The Power of Teachers
+          Lead the Way to Discovery - Explore STEM Teaching with UTeach
         </h1>
         <p className="text-lg text-gray-200 fade-in drop-shadow-lg" style={{animationDelay: '0.3s'}}>
-          The world needs more STEM teachers. Start your journey today.
+          Where empathy meets innovation in shaping tomorrow's STEM leaders.
         </p>
         <div className="flex gap-4 fade-in" style={{animationDelay: '0.6s'}}>
           <button className="btn-primary px-8 py-3 neon-button group">
