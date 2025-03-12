@@ -106,6 +106,60 @@ const StemMinorPrograms = () => {
               </p>
             </div>
 
+            {/* Official Website Button */}
+            <div className="flex justify-center">
+              <a 
+                href="https://www.uml.edu/education/become-teacher/undergraduate/stem-minor-uteach.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold
+                         bg-cyan-500/10 hover:bg-cyan-500/20
+                         text-white hover:text-cyan-200
+                         rounded-full border border-cyan-400/30 hover:border-cyan-400/50
+                         transition-all duration-300 transform hover:scale-105
+                         shadow-[0_0_20px_rgba(6,182,212,0.3),inset_0_0_20px_rgba(6,182,212,0.2)]
+                         hover:shadow-[0_0_30px_rgba(6,182,212,0.5),inset_0_0_30px_rgba(6,182,212,0.3)]
+                         relative overflow-hidden
+                         [text-shadow:_0_0_10px_rgb(6_182_212_/_60%)]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10
+                              animate-shimmer opacity-0 group-hover:opacity-100
+                              transition-opacity duration-500"></div>
+                <span className="relative z-10">Visit Official UMass Lowell Page</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="relative z-10 transition-transform group-hover:translate-x-1"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+
+            {/* Add animation keyframes */}
+            <style jsx>{`
+              @keyframes shimmer {
+                0% {
+                  transform: translateX(-100%);
+                }
+                100% {
+                  transform: translateX(100%);
+                }
+              }
+              .animate-shimmer {
+                animation: shimmer 2s infinite;
+              }
+            `}</style>
+
             {/* Eligibility Section */}
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6
