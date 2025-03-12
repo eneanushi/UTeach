@@ -7,14 +7,14 @@ const Header = () => {
       <div className="flex items-center gap-4">
         <div className="relative group">
           {/* Outer glow layer */}
-          <div className="absolute -inset-2 bg-purple-500/30 rounded-xl blur-xl
-                         group-hover:bg-purple-500/40 
+          <div className="absolute -inset-2 bg-cyan-500/30 rounded-xl blur-xl
+                         group-hover:bg-cyan-500/40 
                          opacity-75 group-hover:opacity-100 
                          transition-all duration-500
                          animate-pulse-slow"></div>
           {/* Inner glow layer */}
-          <div className="absolute -inset-1 bg-purple-400/20 rounded-lg blur-md
-                         group-hover:bg-purple-400/30
+          <div className="absolute -inset-1 bg-cyan-400/20 rounded-lg blur-md
+                         group-hover:bg-cyan-400/30
                          opacity-75 group-hover:opacity-100
                          transition-all duration-500"></div>
           <div className="relative">
@@ -22,8 +22,8 @@ const Header = () => {
               src="/src/UMass-Lowell_logo.svg.png" 
               alt="UMass Lowell Logo" 
               className="h-14 w-auto rounded-lg -mt-1
-                       shadow-[0_0_15px_rgba(168,85,247,0.4)]
-                       group-hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]
+                       shadow-[0_0_15px_rgba(6,182,212,0.4)]
+                       group-hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]
                        transition-all duration-500
                        relative z-10"
             />
@@ -31,12 +31,18 @@ const Header = () => {
         </div>
         <div className="flex flex-col">
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-purple-400 transition-colors
-                         [text-shadow:_0_0_10px_rgb(168_85_247_/_60%),_0_0_20px_rgb(168_85_247_/_40%)]
-                         hover:text-purple-300 hover:[text-shadow:_0_0_15px_rgb(168_85_247_/_70%),_0_0_30px_rgb(168_85_247_/_50%)]">
+            <span className="text-2xl font-bold text-cyan-400 transition-all duration-300
+                         [text-shadow:_0_0_10px_rgb(6_182_212_/_60%),_0_0_20px_rgb(6_182_212_/_40%),_0_0_30px_rgb(168_85_247_/_50%),_0_0_40px_rgb(168_85_247_/_30%)]
+                         hover:text-cyan-300 
+                         hover:[text-shadow:_0_0_15px_rgb(6_182_212_/_70%),_0_0_25px_rgb(6_182_212_/_50%),_0_0_35px_rgb(168_85_247_/_60%),_0_0_50px_rgb(168_85_247_/_40%)]
+                         relative 
+                         after:absolute after:inset-0 after:bg-gradient-to-r after:from-cyan-400/10 after:to-purple-400/10 after:blur-lg after:opacity-0 
+                         hover:after:opacity-100 after:transition-opacity after:duration-300
+                         before:absolute before:inset-0 before:bg-gradient-to-r before:from-purple-500/0 before:via-cyan-500/10 before:to-purple-500/0 
+                         before:animate-shimmer before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300">
               UTeach
             </span>
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-gray-400 transition-colors hover:text-cyan-300/80">
               University of Massachusetts Lowell
             </span>
           </div>
@@ -47,9 +53,13 @@ const Header = () => {
           <li>
             <Link 
               to="/" 
-              className="text-gray-200 hover:text-purple-300 transition-colors
-                       px-4 py-2 rounded-full border border-purple-500/20
-                       hover:border-purple-500/40 hover:bg-purple-500/10"
+              className="text-cyan-300 transition-all duration-300
+                       px-4 py-2 rounded-full border border-cyan-500/20
+                       hover:border-cyan-400/50 hover:bg-cyan-500/10
+                       [text-shadow:_0_0_10px_rgb(6_182_212_/_40%)]
+                       hover:[text-shadow:_0_0_15px_rgb(6_182_212_/_60%),_0_0_30px_rgb(6_182_212_/_30%)]
+                       relative after:absolute after:inset-0 after:bg-cyan-400/5 after:blur-sm after:opacity-0 
+                       hover:after:opacity-100 after:transition-opacity after:duration-300"
             >
               Home
             </Link>
@@ -57,9 +67,13 @@ const Header = () => {
           <li>
             <Link 
               to="/project-overview" 
-              className="text-gray-200 hover:text-purple-300 transition-colors
-                       px-4 py-2 rounded-full border border-purple-500/20
-                       hover:border-purple-500/40 hover:bg-purple-500/10"
+              className="text-cyan-300 transition-all duration-300
+                       px-4 py-2 rounded-full border border-cyan-500/20
+                       hover:border-cyan-400/50 hover:bg-cyan-500/10
+                       [text-shadow:_0_0_10px_rgb(6_182_212_/_40%)]
+                       hover:[text-shadow:_0_0_15px_rgb(6_182_212_/_60%),_0_0_30px_rgb(6_182_212_/_30%)]
+                       relative after:absolute after:inset-0 after:bg-cyan-400/5 after:blur-sm after:opacity-0 
+                       hover:after:opacity-100 after:transition-opacity after:duration-300"
             >
               Project Overview
             </Link>
@@ -67,9 +81,13 @@ const Header = () => {
           <li>
             <Link 
               to="/stem-minor" 
-              className="text-gray-200 hover:text-purple-300 transition-colors
-                       px-4 py-2 rounded-full border border-purple-500/20
-                       hover:border-purple-500/40 hover:bg-purple-500/10"
+              className="text-cyan-300 transition-all duration-300
+                       px-4 py-2 rounded-full border border-cyan-500/20
+                       hover:border-cyan-400/50 hover:bg-cyan-500/10
+                       [text-shadow:_0_0_10px_rgb(6_182_212_/_40%)]
+                       hover:[text-shadow:_0_0_15px_rgb(6_182_212_/_60%),_0_0_30px_rgb(6_182_212_/_30%)]
+                       relative after:absolute after:inset-0 after:bg-cyan-400/5 after:blur-sm after:opacity-0 
+                       hover:after:opacity-100 after:transition-opacity after:duration-300"
             >
               STEM Minor
             </Link>
