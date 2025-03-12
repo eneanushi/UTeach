@@ -3,6 +3,14 @@ import BackgroundBoxes from './ui/background-boxes';
 import Header from './shared/Header';
 import { initScrollAnimation } from '../utils/scrollAnimation';
 
+// Import images
+import uteach1 from '../UTeach images/uteach1.webp';
+import uteach2 from '../UTeach images/uteach2.webp';
+import uteach3 from '../UTeach images/3.webp';
+import uteach4 from '../UTeach images/4.webp';
+import uteach5 from '../UTeach images/5.webp';
+import uteachMain from '../UTeach images/uteach.webp';
+
 const ProjectOverview = () => {
   useEffect(() => {
     initScrollAnimation();

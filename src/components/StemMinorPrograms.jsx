@@ -4,6 +4,14 @@ import BackgroundBoxes from './ui/background-boxes';
 import Header from './shared/Header';
 import { initScrollAnimation } from '../utils/scrollAnimation';
 
+// Import images
+import uteach1 from '../UTeach images/uteach1.webp';
+import uteach2 from '../UTeach images/uteach2.webp';
+import uteach3 from '../UTeach images/3.webp';
+import uteach4 from '../UTeach images/4.webp';
+import uteach5 from '../UTeach images/5.webp';
+import uteachMain from '../UTeach images/uteach.webp';
+
 const StemMinorPrograms = () => {
   useEffect(() => {
     initScrollAnimation();
@@ -152,14 +160,28 @@ const StemMinorPrograms = () => {
                            border-l-4 border-white/50 pl-4 scroll-animate">
                 Program Structure
               </h2>
-              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
-                <p className="text-lg leading-relaxed">
-                  Students begin with the experiential learning course "Exploring Teaching and Learning in STEM," 
-                  providing early guided teaching experience in a middle school classroom. As they progress, students 
-                  gain further experience teaching in high school classrooms, including organizing and leading field trips. 
-                  UTeach courses focus on teaching math, science, and engineering content using the inquiry-based 5E 
-                  instructional model: Engage, Explore, Explain, Elaborate, and Evaluate.
-                </p>
+              <div className="space-y-6">
+                <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
+                  <p className="text-lg leading-relaxed mb-6">
+                    Students begin with the experiential learning course "Exploring Teaching and Learning in STEM," 
+                    providing early guided teaching experience in a middle school classroom. As they progress, students 
+                    gain further experience teaching in high school classrooms, including organizing and leading field trips.
+                  </p>
+                  <div className="relative h-[28rem] rounded-lg overflow-hidden">
+                    <img
+                      src={uteach1}
+                      alt="Students engaged in STEM teaching practice"
+                      className="w-full h-full object-cover object-[center_25%]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                </div>
+                <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
+                  <p className="text-lg leading-relaxed">
+                    UTeach courses focus on teaching math, science, and engineering content using the inquiry-based 5E 
+                    instructional model: Engage, Explore, Explain, Elaborate, and Evaluate.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -171,11 +193,23 @@ const StemMinorPrograms = () => {
                 Licensure Opportunity
               </h2>
               <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
-                <p className="text-lg leading-relaxed">
-                  Students can earn Massachusetts initial teacher licensure to teach math, science, or technology/engineering 
-                  in middle and high schools. This requires completing a one-semester teaching practicum, during which 
-                  students teach full-time in a local secondary school.
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                  <div>
+                    <p className="text-lg leading-relaxed">
+                      Students can earn Massachusetts initial teacher licensure to teach math, science, or technology/engineering 
+                      in middle and high schools. This requires completing a one-semester teaching practicum, during which 
+                      students teach full-time in a local secondary school.
+                    </p>
+                  </div>
+                  <div className="relative h-[24rem] rounded-lg overflow-hidden">
+                    <img
+                      src={uteach4}
+                      alt="Laboratory teaching experience"
+                      className="w-full h-full object-cover object-[center_25%]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
