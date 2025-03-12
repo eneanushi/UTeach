@@ -85,16 +85,11 @@ const ComingSoon = () => {
         
         {/* Button with hover effects */}
         <button 
-          className="animate-on-mount opacity-0 btn-primary text-xl px-12 py-4
-                     relative overflow-hidden group
-                     transition-all duration-500 ease-out
-                     hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.5)]
-                     bg-purple-600 hover:bg-purple-700
-                     [text-shadow:_0_0_10px_rgb(124_58_237_/_60%)]"
+          className="animate-on-mount opacity-0 btn-primary text-xl px-12 py-4 neon-button"
           onClick={handleGoBack}
         >
           <span className="relative z-10">Go Back</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-800
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-purple-800/5
                         transform scale-x-0 group-hover:scale-x-100
                         transition-transform duration-500 origin-left"></div>
         </button>
