@@ -1,7 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'react-feather';
+import { 
+  ChevronLeft, 
+  ChevronRight,
+  Award,
+  BookOpen,
+  HelpCircle,
+  Target,
+  Search,
+  Globe,
+  Video,
+  CheckCircle,
+  Star,
+  Flag
+} from 'react-feather';
 import Header from './shared/Header';
 import BackgroundCircles from './ui/background-circles';
+
+const AnimatedIcon = ({ Icon }) => (
+  <div className="mb-8 opacity-0 scale-90 animate-icon-pop text-cyan-400">
+    <Icon size={48} className="animate-float" />
+  </div>
+);
 
 const AnimatedBulletPoint = ({ children, index }) => (
   <li className="opacity-0 -translate-y-4 animate-slide-in text-xl"
@@ -20,6 +39,7 @@ const AnimatedText = ({ children, delay = 0 }) => (
 const slides = [
   {
     title: "Lead the Way to Discovery: UTeach Initiative",
+    icon: Award,
     content: (
       <div className="space-y-6">
         <AnimatedText delay={0.2}>Presented by: Enea Nushi</AnimatedText>
@@ -29,6 +49,7 @@ const slides = [
   },
   {
     title: "Introduction to the Project",
+    icon: BookOpen,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Honors project supported by UMass Lowell</AnimatedBulletPoint>
@@ -39,6 +60,7 @@ const slides = [
   },
   {
     title: "Why This Project?",
+    icon: HelpCircle,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Growing reliance on AI in education</AnimatedBulletPoint>
@@ -49,6 +71,7 @@ const slides = [
   },
   {
     title: "Project Objectives Overview",
+    icon: Target,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Conduct in-depth research on STEM and UTeach</AnimatedBulletPoint>
@@ -59,6 +82,7 @@ const slides = [
   },
   {
     title: "Research Phase",
+    icon: Search,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Analyzed STEM teaching methods</AnimatedBulletPoint>
@@ -69,6 +93,7 @@ const slides = [
   },
   {
     title: "Webpage Development",
+    icon: Globe,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Comprehensive information on STEM and UTeach</AnimatedBulletPoint>
@@ -79,6 +104,7 @@ const slides = [
   },
   {
     title: "Video Storytelling and Advertisement",
+    icon: Video,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Creating emotionally engaging content</AnimatedBulletPoint>
@@ -89,6 +115,7 @@ const slides = [
   },
   {
     title: "Achievements and Progress",
+    icon: CheckCircle,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Completed detailed initial research</AnimatedBulletPoint>
@@ -99,6 +126,7 @@ const slides = [
   },
   {
     title: "Project Impact and Goals",
+    icon: Star,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Inspire interest and passion in STEM teaching</AnimatedBulletPoint>
@@ -109,6 +137,7 @@ const slides = [
   },
   {
     title: "Closing and Future Steps",
+    icon: Flag,
     content: (
       <ul className="list-disc list-inside space-y-6">
         <AnimatedBulletPoint index={0}>Finalize and launch webpage</AnimatedBulletPoint>
@@ -173,6 +202,7 @@ const Presentation = () => {
           
           {/* Slide Content */}
           <div key={currentSlide} className="flex-1 flex flex-col items-center justify-center text-center space-y-12">
+            <AnimatedIcon Icon={slides[currentSlide].icon} />
             <h1 className="text-4xl md:text-5xl font-black mb-8 text-white opacity-0 scale-95 animate-title-in
                          [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
               {slides[currentSlide].title}
@@ -244,6 +274,30 @@ const Presentation = () => {
           }
         }
 
+        @keyframes iconPop {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          70% {
+            opacity: 1;
+            transform: scale(1.1);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
         .animate-slide-in {
           animation: slideIn 0.6s ease-out forwards;
         }
@@ -254,6 +308,14 @@ const Presentation = () => {
 
         .animate-title-in {
           animation: titleIn 0.8s ease-out forwards;
+        }
+
+        .animate-icon-pop {
+          animation: iconPop 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
         }
       `}</style>
     </div>
