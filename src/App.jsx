@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import createScrollObserver from './scroll'
 import BackgroundBoxes from './components/ui/background-boxes'
 import OpeningAnimation from './components/OpeningAnimation'
+import ComingSoon from './components/ComingSoon'
 
 // Header Component
 const Header = () => {
@@ -23,6 +25,12 @@ const Header = () => {
 
 // Hero Component
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleWatchVideo = () => {
+    navigate('/coming-soon');
+  };
+
   return (
     <div className="flex flex-col gap-8 px-6 py-20 md:flex-row md:items-center md:py-32 relative overflow-hidden">
       <div className="shape triangle" style={{ top: '10%', left: '5%', animationDelay: '0s' }}></div>
@@ -42,8 +50,11 @@ const Hero = () => {
           <button className="btn-primary px-8 py-3 bg-purple-500 text-white rounded-full font-bold">
             Get Started
           </button>
-          <button className="btn-primary px-8 py-3 bg-purple-900/30 text-white rounded-full font-bold
-                           border-2 border-purple-500/50">
+          <button 
+            onClick={handleWatchVideo}
+            className="btn-primary px-8 py-3 bg-purple-900/30 text-white rounded-full font-bold
+                     border-2 border-purple-500/50"
+          >
             Watch Video
           </button>
         </div>
@@ -249,57 +260,83 @@ const FloatingCircles = () => {
   return <div className="floating-circles"></div>;
 };
 
-// Main App Component
-function App() {
-  const [showMainContent, setShowMainContent] = useState(false);
+// MainContent Component (moved outside App)
+const MainContent = ({ showMainContent }) => (
+  <div className={`min-h-screen overflow-hidden bg-black text-white relative transition-opacity duration-1000 ${showMainContent ? 'opacity-100' : 'opacity-0'}`}>
+    {/* Background Elements */}
+    <BackgroundBoxes />
+    
+    {/* Content Layer */}
+    <div className="relative z-10">
+      <Header />
+      <main className="container mx-auto max-w-7xl pt-16">
+        <section id="hero" data-scroll>
+          <Hero />
+        </section>
+
+        <section id="programs" data-scroll className="relative">
+          <div className="absolute inset-0 bg-purple-500/5 backdrop-blur-md rounded-3xl 
+                        border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)]"></div>
+          <Programs />
+        </section>
+
+        <section id="features" data-scroll>
+          <Features />
+        </section>
+
+        <section id="contact" data-scroll>
+          <CallToAction />
+        </section>
+      </main>
+    </div>
+
+    {/* Additional ambient light */}
+    <div className="fixed inset-0 pointer-events-none">
+      <div className="absolute inset-0 bg-gradient-radial from-purple-500/5 via-transparent to-transparent"></div>
+    </div>
+  </div>
+);
+
+// Wrap MainContent to handle navigation state
+const MainContentWrapper = () => {
+  const [showContent, setShowContent] = useState(false);
+  const [skipOpening, setSkipOpening] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     createScrollObserver();
   }, []);
 
+  useEffect(() => {
+    // Check if we're coming back from ComingSoon page
+    if (location.state?.fromComingSoon) {
+      setShowContent(true);
+      setSkipOpening(true);
+    }
+  }, [location]);
+
   const handleAnimationComplete = () => {
-    setShowMainContent(true);
+    setShowContent(true);
   };
 
   return (
     <>
-      <OpeningAnimation onComplete={handleAnimationComplete} />
-      
-      <div className={`min-h-screen overflow-hidden bg-black text-white relative transition-opacity duration-1000 ${showMainContent ? 'opacity-100' : 'opacity-0'}`}>
-        {/* Background Elements */}
-        <BackgroundBoxes />
-        
-        {/* Content Layer */}
-        <div className="relative z-10">
-          <Header />
-          <main className="container mx-auto max-w-7xl pt-16">
-            <section id="hero" data-scroll>
-              <Hero />
-            </section>
-
-            <section id="programs" data-scroll className="relative">
-              <div className="absolute inset-0 bg-purple-500/5 backdrop-blur-md rounded-3xl 
-                            border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)]"></div>
-              <Programs />
-            </section>
-
-            <section id="features" data-scroll>
-              <Features />
-            </section>
-
-            <section id="contact" data-scroll>
-              <CallToAction />
-            </section>
-          </main>
-        </div>
-
-        {/* Additional ambient light */}
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-radial from-purple-500/5 via-transparent to-transparent"></div>
-        </div>
-      </div>
+      {!skipOpening && <OpeningAnimation onComplete={handleAnimationComplete} />}
+      <MainContent showMainContent={showContent || skipOpening} />
     </>
-  )
+  );
+};
+
+// Main App Component
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainContentWrapper />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App

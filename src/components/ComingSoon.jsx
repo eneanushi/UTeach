@@ -16,7 +16,10 @@ const ComingSoon = () => {
   }, []);
 
   const handleGoBack = () => {
-    navigate('/', { state: { fromComingSoon: true } });
+    navigate('/', { 
+      state: { fromComingSoon: true },
+      replace: true 
+    });
   };
 
   return (
