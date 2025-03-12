@@ -6,19 +6,28 @@
   html {
     font-family: Lexend, "Noto Sans", sans-serif;
     scroll-behavior: smooth;
-    @apply text-gray-900;
+    @apply text-white;
   }
 
   body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    @apply bg-gradient-to-br from-white to-[#f0f7ff];
+    @apply bg-black;
   }
 
   #root {
     width: 100%;
     min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+  }
+
+  p {
+    @apply text-gray-200;
   }
 }
 
@@ -33,39 +42,40 @@
 
   /* Card styles */
   .card {
-    @apply bg-white/70 backdrop-blur-sm border border-[#d1dde6]/50 transition-all duration-300;
+    @apply bg-black/70 backdrop-blur-sm border border-purple-500/30 transition-all duration-300;
     min-height: 380px;
     transform: translateY(0);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card:hover {
-    @apply bg-white/90 border-[#3aa0e4]/30;
+    @apply bg-black/80 border-purple-500/50;
     transform: translateY(-12px);
     box-shadow: 
-      0 20px 40px rgba(58, 160, 228, 0.1),
-      0 0 0 1px rgba(58, 160, 228, 0.1),
-      0 0 0 4px rgba(58, 160, 228, 0.05);
+      0 20px 40px rgba(168, 85, 247, 0.2),
+      0 0 0 1px rgba(168, 85, 247, 0.2),
+      0 0 0 4px rgba(168, 85, 247, 0.1);
   }
 
   /* Button styles */
   .btn-primary {
     @apply relative overflow-hidden;
-    background: linear-gradient(135deg, #3aa0e4 0%, #2980b9 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     color: white;
     padding: 0.75rem 2rem;
     border-radius: 9999px;
     font-weight: bold;
     transform: translateY(0);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
   }
 
   .btn-primary:hover {
     transform: translateY(-6px);
     box-shadow: 
-      0 10px 25px rgba(58, 160, 228, 0.3),
-      0 0 0 2px rgba(58, 160, 228, 0.2);
-    background: linear-gradient(135deg, #3aa0e4 0%, #3498db 100%);
+      0 10px 25px rgba(168, 85, 247, 0.4),
+      0 0 0 2px rgba(168, 85, 247, 0.3);
+    background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
   }
 
   .btn-primary:active {
@@ -131,6 +141,7 @@
 
   /* Feature card specific styles */
   .feature-card {
+    @apply bg-black/60;
     min-height: 400px;
     padding: 2rem;
     display: flex;
@@ -139,26 +150,30 @@
   }
 
   .feature-card .icon-container {
-    @apply text-[#3aa0e4] text-4xl;
+    @apply text-purple-400;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
     transition: transform 0.3s ease;
   }
 
   .feature-card:hover .icon-container {
     transform: scale(1.1);
+    @apply text-purple-300;
   }
 
   .feature-card .title {
-    @apply text-xl font-bold text-[#0e161b];
+    @apply text-xl font-bold text-white;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
     margin-bottom: 1rem;
   }
 
   .feature-card .description {
-    @apply text-[#507a95] leading-relaxed;
+    @apply text-gray-300 leading-relaxed;
     font-size: 1.05rem;
   }
 
   /* Program card specific styles */
   .program-card {
+    @apply bg-black/60;
     min-height: 420px;
   }
 
@@ -173,14 +188,27 @@
   .program-card .title {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #0e161b;
+    @apply text-white;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
     margin-top: 0.5rem;
   }
 
   .program-card .description {
-    color: #507a95;
+    @apply text-gray-300;
     line-height: 1.6;
     font-size: 1.05rem;
+  }
+
+  /* Navigation styles */
+  nav a {
+    @apply text-gray-200 hover:text-purple-300 transition-colors;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+  }
+
+  /* Header styles */
+  header {
+    @apply bg-black/80 border-b border-purple-500/20;
+    box-shadow: 0 4px 30px rgba(168, 85, 247, 0.1);
   }
 
   /* Enhanced hover effect for all cards */
@@ -191,9 +219,9 @@
   .hover-lift:hover {
     transform: translateY(-12px);
     box-shadow: 
-      0 20px 40px rgba(58, 160, 228, 0.1),
-      0 0 0 1px rgba(58, 160, 228, 0.1),
-      0 0 0 4px rgba(58, 160, 228, 0.05);
+      0 20px 40px rgba(168, 85, 247, 0.2),
+      0 0 0 1px rgba(168, 85, 247, 0.2),
+      0 0 0 4px rgba(168, 85, 247, 0.1);
   }
 }
 

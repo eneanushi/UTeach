@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react'
 import createScrollObserver from './scroll'
+import BackgroundBoxes from './components/ui/background-boxes'
 
 // Header Component
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-sm z-50">
-      <div className="text-[#0e161b] text-2xl font-bold">UTeach</div>
+    <header className="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-sm z-50">
+      <div className="text-purple-300 text-2xl font-bold hover:text-purple-200 transition-colors">
+        UTeach
+      </div>
       <nav>
         <ul className="flex gap-6">
-          <li><a href="#programs" className="text-[#0e161b] hover:text-[#3aa0e4] transition-colors">Programs</a></li>
-          <li><a href="#features" className="text-[#0e161b] hover:text-[#3aa0e4] transition-colors">Features</a></li>
-          <li><a href="#contact" className="text-[#0e161b] hover:text-[#3aa0e4] transition-colors">Contact</a></li>
+          <li><a href="#programs" className="text-gray-200 hover:text-purple-300 transition-colors">Programs</a></li>
+          <li><a href="#features" className="text-gray-200 hover:text-purple-300 transition-colors">Features</a></li>
+          <li><a href="#contact" className="text-gray-200 hover:text-purple-300 transition-colors">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -27,24 +30,27 @@ const Hero = () => {
       <div className="shape circle" style={{ bottom: '10%', left: '15%', animationDelay: '3s' }}></div>
       
       <div className="flex flex-col gap-6 md:flex-1">
-        <h1 className="text-4xl md:text-6xl font-black text-[#0e161b] leading-tight fade-in">
+        <h1 className="text-4xl md:text-6xl font-black text-white leading-tight fade-in
+                     [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
           AI is shaping industries, but teachers shape humanity
         </h1>
-        <p className="text-lg text-[#507a95] fade-in" style={{animationDelay: '0.3s'}}>
+        <p className="text-lg text-gray-200 fade-in drop-shadow-lg" style={{animationDelay: '0.3s'}}>
           The world needs more STEM teachers. Start your journey today.
         </p>
         <div className="flex gap-4 fade-in" style={{animationDelay: '0.6s'}}>
-          <button className="btn-primary px-8 py-3 bg-[#3aa0e4] text-white rounded-full font-bold">
+          <button className="btn-primary px-8 py-3 bg-purple-500 text-white rounded-full font-bold">
             Get Started
           </button>
-          <button className="btn-primary px-8 py-3 bg-[#e8eef3] text-[#0e161b] rounded-full font-bold">
+          <button className="btn-primary px-8 py-3 bg-purple-900/30 text-white rounded-full font-bold
+                           border-2 border-purple-500/50">
             Watch Video
           </button>
         </div>
       </div>
       <div className="md:flex-1">
         <div 
-          className="w-full aspect-video bg-cover bg-center rounded-xl shadow-xl scale-in"
+          className="w-full aspect-video bg-cover bg-center rounded-xl shadow-xl scale-in
+                     shadow-purple-500/20 border border-purple-500/20"
           style={{
             backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/e6a4af66-99ef-4dab-bbc2-07013b46600e.png")'
           }}
@@ -185,7 +191,8 @@ const Programs = () => {
 
   return (
     <div className="animated-bg">
-      <h1 className="text-[#0e161b] tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-6 fade-in">
+      <h1 className="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-6 fade-in
+                    [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
         Our programs
       </h1>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
@@ -245,16 +252,11 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen gradient-bg overflow-hidden">
-      {/* Enhanced background layers */}
-      <div className="fixed inset-0 z-0">
-        <div className="bg-pattern"></div>
-        <div className="circuit-lines"></div>
-        <FloatingCircles />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white/50"></div>
-      </div>
-
-      {/* Main content */}
+    <div className="min-h-screen overflow-hidden bg-black text-white relative">
+      {/* Background Elements */}
+      <BackgroundBoxes />
+      
+      {/* Content Layer */}
       <div className="relative z-10">
         <Header />
         <main className="container mx-auto max-w-7xl pt-16">
@@ -263,7 +265,8 @@ function App() {
           </section>
 
           <section id="programs" data-scroll className="relative">
-            <div className="absolute inset-0 bg-white/30 backdrop-blur-md rounded-3xl"></div>
+            <div className="absolute inset-0 bg-purple-500/5 backdrop-blur-md rounded-3xl 
+                          border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)]"></div>
             <Programs />
           </section>
 
@@ -275,6 +278,11 @@ function App() {
             <CallToAction />
           </section>
         </main>
+      </div>
+
+      {/* Additional ambient light */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-radial from-purple-500/5 via-transparent to-transparent"></div>
       </div>
     </div>
   )
