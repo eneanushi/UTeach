@@ -7,6 +7,13 @@ const OpeningAnimation = ({ onComplete }) => {
   const [showFinalQuote, setShowFinalQuote] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
 
+  const handleSkip = async () => {
+    setIsExiting(true);
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    setShowAnimation(false);
+    onComplete();
+  };
+
   useEffect(() => {
     // Sequence the animations
     const sequence = async () => {
@@ -39,6 +46,21 @@ const OpeningAnimation = ({ onComplete }) => {
     <div className={`fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden
                     transition-all duration-[1200ms] ease-in-out transform
                     ${isExiting ? 'opacity-0 scale-105 blur-md' : 'opacity-100 scale-100 blur-0'}`}>
+      {/* Skip button */}
+      <button
+        onClick={handleSkip}
+        className="absolute top-6 right-6 px-6 py-2 text-sm font-medium 
+                  text-purple-300 hover:text-white
+                  bg-purple-500/10 hover:bg-purple-500/20 backdrop-blur-sm rounded-full
+                  transition-all duration-300 transform hover:scale-105
+                  border border-purple-500/30 hover:border-purple-500/50
+                  [text-shadow:_0_0_10px_rgb(124_58_237_/_60%)]
+                  shadow-[0_0_20px_rgba(124,58,237,0.2)]
+                  hover:shadow-[0_0_30px_rgba(124,58,237,0.4),_0_0_50px_rgba(124,58,237,0.2)]"
+      >
+        Skip Intro
+      </button>
+      
       <BackgroundCircles />
       <div className={`relative z-10 flex flex-col items-center justify-center gap-8 px-4 text-center
                       transition-all duration-[1200ms] transform
