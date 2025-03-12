@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BackgroundBoxes from './ui/background-boxes';
 import Header from './shared/Header';
+import { initScrollAnimation } from '../utils/scrollAnimation';
 
 const StemMinorPrograms = () => {
+  useEffect(() => {
+    initScrollAnimation();
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-12 relative overflow-hidden">
       {/* Background Elements */}
@@ -26,7 +31,7 @@ const StemMinorPrograms = () => {
                       transition-all duration-500">
           
           {/* Title Section */}
-          <div className="relative mb-16">
+          <div className="relative mb-16 scroll-animate">
             <h1 className="text-5xl md:text-6xl font-black mb-6 text-center text-white
                          [text-shadow:_0_0_30px_rgb(168_85_247_/_40%),_0_0_60px_rgb(168_85_247_/_20%)]">
               UTeach STEM Minor Programs
@@ -39,7 +44,7 @@ const StemMinorPrograms = () => {
           <div className="space-y-8">
             <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10
                           transform hover:scale-[1.02] transition-all duration-300
-                          hover:shadow-[0_0_25px_rgba(168,85,247,0.1)]">
+                          hover:shadow-[0_0_25px_rgba(168,85,247,0.1)] scroll-animate">
               <p className="text-lg leading-relaxed">
                 The UTeach STEM Teaching minor at UMass Lowell is an innovative undergraduate teacher preparation program 
                 recognized by the national UTeach initiative. It offers STEM majors the opportunity to explore and prepare 
@@ -48,7 +53,7 @@ const StemMinorPrograms = () => {
             </div>
 
             {/* Official Website Button */}
-            <div className="flex justify-center">
+            <div className="flex justify-center scroll-animate">
               <a 
                 href="https://www.uml.edu/education/become-teacher/undergraduate/stem-minor-uteach.aspx"
                 target="_blank"
@@ -105,10 +110,10 @@ const StemMinorPrograms = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6
                            [text-shadow:_0_0_15px_rgb(168_85_247_/_40%)]
-                           border-l-4 border-white/50 pl-4">
+                           border-l-4 border-white/50 pl-4 scroll-animate">
                 Eligibility
               </h2>
-              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10">
+              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
                 <p className="mb-4">The program is open to students majoring in the following STEM fields:</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {[
@@ -144,10 +149,10 @@ const StemMinorPrograms = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6
                            [text-shadow:_0_0_15px_rgb(168_85_247_/_40%)]
-                           border-l-4 border-white/50 pl-4">
+                           border-l-4 border-white/50 pl-4 scroll-animate">
                 Program Structure
               </h2>
-              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10">
+              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
                 <p className="text-lg leading-relaxed">
                   Students begin with the experiential learning course "Exploring Teaching and Learning in STEM," 
                   providing early guided teaching experience in a middle school classroom. As they progress, students 
@@ -162,10 +167,10 @@ const StemMinorPrograms = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6
                            [text-shadow:_0_0_15px_rgb(168_85_247_/_40%)]
-                           border-l-4 border-white/50 pl-4">
+                           border-l-4 border-white/50 pl-4 scroll-animate">
                 Licensure Opportunity
               </h2>
-              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10">
+              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
                 <p className="text-lg leading-relaxed">
                   Students can earn Massachusetts initial teacher licensure to teach math, science, or technology/engineering 
                   in middle and high schools. This requires completing a one-semester teaching practicum, during which 
@@ -178,10 +183,10 @@ const StemMinorPrograms = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6
                            [text-shadow:_0_0_15px_rgb(168_85_247_/_40%)]
-                           border-l-4 border-white/50 pl-4">
+                           border-l-4 border-white/50 pl-4 scroll-animate">
                 Additional Benefits
               </h2>
-              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10">
+              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
                 <ul className="space-y-4">
                   <li className="flex items-start gap-2">
                     <span className="text-purple-400 mt-1">•</span>
@@ -203,10 +208,10 @@ const StemMinorPrograms = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white mb-6
                            [text-shadow:_0_0_15px_rgb(168_85_247_/_40%)]
-                           border-l-4 border-white/50 pl-4">
+                           border-l-4 border-white/50 pl-4 scroll-animate">
                 Career Prospects
               </h2>
-              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10">
+              <div className="bg-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/10 scroll-animate">
                 <p className="mb-4 text-lg">
                   There is a critical need for highly qualified STEM teachers, a demand expected to grow over the next decade. 
                   UTeach graduates have secured teaching positions in various Massachusetts school districts, including:
@@ -234,6 +239,25 @@ const StemMinorPrograms = () => {
           </div>
         </div>
       </div>
+
+      {/* Add the same style block as in ProjectOverview */}
+      <style jsx>{`
+        .scroll-animate {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        /* Add different animation delays for consecutive elements */
+        .scroll-animate:nth-child(2) { transition-delay: 0.2s; }
+        .scroll-animate:nth-child(3) { transition-delay: 0.4s; }
+        .scroll-animate:nth-child(4) { transition-delay: 0.6s; }
+      `}</style>
     </div>
   );
 };
