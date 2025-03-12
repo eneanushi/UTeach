@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import createScrollObserver from './scroll'
 import BackgroundBoxes from './components/ui/background-boxes'
+import OpeningAnimation from './components/OpeningAnimation'
 
 // Header Component
 const Header = () => {
@@ -250,44 +251,54 @@ const FloatingCircles = () => {
 
 // Main App Component
 function App() {
+  const [showMainContent, setShowMainContent] = useState(false);
+
   useEffect(() => {
     createScrollObserver();
   }, []);
 
+  const handleAnimationComplete = () => {
+    setShowMainContent(true);
+  };
+
   return (
-    <div className="min-h-screen overflow-hidden bg-black text-white relative">
-      {/* Background Elements */}
-      <BackgroundBoxes />
+    <>
+      <OpeningAnimation onComplete={handleAnimationComplete} />
       
-      {/* Content Layer */}
-      <div className="relative z-10">
-        <Header />
-        <main className="container mx-auto max-w-7xl pt-16">
-          <section id="hero" data-scroll>
-            <Hero />
-          </section>
+      <div className={`min-h-screen overflow-hidden bg-black text-white relative transition-opacity duration-1000 ${showMainContent ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Background Elements */}
+        <BackgroundBoxes />
+        
+        {/* Content Layer */}
+        <div className="relative z-10">
+          <Header />
+          <main className="container mx-auto max-w-7xl pt-16">
+            <section id="hero" data-scroll>
+              <Hero />
+            </section>
 
-          <section id="programs" data-scroll className="relative">
-            <div className="absolute inset-0 bg-purple-500/5 backdrop-blur-md rounded-3xl 
-                          border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)]"></div>
-            <Programs />
-          </section>
+            <section id="programs" data-scroll className="relative">
+              <div className="absolute inset-0 bg-purple-500/5 backdrop-blur-md rounded-3xl 
+                            border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)]"></div>
+              <Programs />
+            </section>
 
-          <section id="features" data-scroll>
-            <Features />
-          </section>
+            <section id="features" data-scroll>
+              <Features />
+            </section>
 
-          <section id="contact" data-scroll>
-            <CallToAction />
-          </section>
-        </main>
+            <section id="contact" data-scroll>
+              <CallToAction />
+            </section>
+          </main>
+        </div>
+
+        {/* Additional ambient light */}
+        <div className="fixed inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-radial from-purple-500/5 via-transparent to-transparent"></div>
+        </div>
       </div>
-
-      {/* Additional ambient light */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-radial from-purple-500/5 via-transparent to-transparent"></div>
-      </div>
-    </div>
+    </>
   )
 }
 

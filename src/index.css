@@ -471,3 +471,37 @@
   animation: fadeIn 0.5s ease forwards;
 }
 
+/* Add new keyframes for text animation */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.4),
+                 0 0 60px rgba(168, 85, 247, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(168, 85, 247, 0.6),
+                 0 0 80px rgba(168, 85, 247, 0.3);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
