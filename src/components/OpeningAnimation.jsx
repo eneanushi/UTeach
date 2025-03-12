@@ -75,12 +75,12 @@ const OpeningAnimation = ({ onComplete }) => {
                        text-white
                        [text-shadow:_0_0_20px_rgb(124_58_237_/_80%),_0_0_40px_rgb(124_58_237_/_60%),_0_0_80px_rgb(124_58_237_/_40%)]`}
           >
-            UTeach Program
+            Lead the Way to Discovery with UTeach
           </h1>
           
           {/* Supported by University */}
           <h2 
-            className={`text-4xl font-bold text-center transition-all duration-1000 max-w-3xl mb-8 transform
+            className={`text-4xl font-bold text-center mx-auto transition-all duration-1000 max-w-3xl mb-8 transform
                        ${textPhase >= 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
                        text-white
                        [text-shadow:_0_0_15px_rgb(124_58_237_/_70%),_0_0_30px_rgb(124_58_237_/_50%),_0_0_60px_rgb(124_58_237_/_30%)]`}
