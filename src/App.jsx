@@ -32,9 +32,14 @@ const Hero = () => {
           Where empathy meets innovation in shaping tomorrow's STEM leaders.
         </p>
         <div className="flex gap-4 fade-in" style={{animationDelay: '0.6s'}}>
-          <button className="btn-primary px-8 py-3 neon-button group">
+          <a 
+            href="https://www.uml.edu/admissions/apply/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary px-8 py-3 neon-button group"
+          >
             <span className="neon-text">Get Started</span>
-          </button>
+          </a>
           <button 
             onClick={handleWatchVideo}
             className="btn-primary px-8 py-3 neon-button group"
@@ -215,10 +220,15 @@ const CallToAction = () => {
       <h2 className="text-3xl md:text-4xl font-bold mb-8 fade-in">
         Ready to make a difference?
       </h2>
-      <button className="btn-primary px-8 py-3 neon-button group" 
-              style={{animationDelay: '0.3s'}}>
+      <a 
+        href="https://www.uml.edu/admissions/apply/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-primary px-8 py-3 neon-button group inline-block" 
+        style={{animationDelay: '0.3s'}}
+      >
         <span className="neon-text">Apply Now</span>
-      </button>
+      </a>
     </div>
   )
 }
