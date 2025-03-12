@@ -109,7 +109,7 @@ const OpeningAnimation = ({ onComplete }) => {
                        animate-[textGlow_2s_ease-in-out_infinite]
                        ${isExiting ? 'scale-95 blur-[2px]' : 'scale-100 blur-0'}`}
           >
-            AI is shaping industries, but teachers shape humanity
+            Beyond Algorithms: The Heart of Teaching
           </h2>
         </div>
       </div>
