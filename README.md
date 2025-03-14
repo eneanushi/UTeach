@@ -9,17 +9,11 @@ The UTeach website will provide specific information about the UTeach program, i
 - **Frontend Framework:** React 18
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
-- **Icons:** React Feather
-- **Routing:** React Router DOM
-- **Development Tools:**
-  - PostCSS
-  - Autoprefixer
-  - Container Queries
-  - ESLint
+  
 
 ## Features
 1. **Modern React Architecture**
-   - Built with the latest React 18 features
+   - Built with the React
    - Component-based structure for maintainability
    - Efficient routing with React Router DOM
 
