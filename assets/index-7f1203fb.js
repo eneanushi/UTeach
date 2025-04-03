@@ -106,7 +106,7 @@ Please change the parent <Route path="${p}"> to <Route path="${p==="/"?"*":`${p}
                          animate-pulse-slow`}),u.jsx("div",{className:`absolute -inset-1 bg-cyan-400/20 rounded-lg blur-md
                          group-hover:bg-cyan-400/30
                          opacity-75 group-hover:opacity-100
-                         transition-all duration-500`}),u.jsx("div",{className:"relative",children:u.jsx("img",{src:"/images/UMass-Lowell_logo.svg.png",alt:"UMass Lowell Logo",className:`h-14 w-auto rounded-lg -mt-1
+                         transition-all duration-500`}),u.jsx("div",{className:"relative",children:u.jsx("img",{src:"/UTeach/images/UMass-Lowell_logo.svg.png",alt:"UMass Lowell Logo",className:`h-14 w-auto rounded-lg -mt-1
                        shadow-[0_0_15px_rgba(6,182,212,0.4)]
                        group-hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]
                        transition-all duration-500
