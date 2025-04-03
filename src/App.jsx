@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Link } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, useNavigate, useLocation, Link } from 'react-router-dom'
 import createScrollObserver from './scroll'
 import BackgroundBoxes from './components/ui/background-boxes'
 import OpeningAnimation from './components/OpeningAnimation'
