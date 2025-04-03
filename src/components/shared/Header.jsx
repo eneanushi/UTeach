@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UMassLogo from '../../UMass-Lowell_logo.svg.png';
 
 const Header = () => {
   return (
@@ -19,7 +20,7 @@ const Header = () => {
                          transition-all duration-500"></div>
           <div className="relative">
             <img 
-              src="/UTeach/images/UMass-Lowell_logo.svg.png" 
+              src={UMassLogo}
               alt="UMass Lowell Logo" 
               className="h-14 w-auto rounded-lg -mt-1
                        shadow-[0_0_15px_rgba(6,182,212,0.4)]
