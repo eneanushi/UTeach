@@ -43,7 +43,6 @@ const slides = [
     content: (
       <div className="space-y-6">
         <AnimatedText delay={0.2}>Presented by: Enea Nushi</AnimatedText>
-        <AnimatedText delay={0.4}>Guided by: Dr. Sumudu Lewis, UMass Lowell</AnimatedText>
       </div>
     )
   },
