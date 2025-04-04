@@ -6,16 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    emptyOutDir: true,
-    sourcemap: true,
-    minify: 'terser',
-    target: 'es2018',
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
+    minify: true
   },
   server: {
     port: 3000
