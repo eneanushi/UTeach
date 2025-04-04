@@ -3,15 +3,10 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "framework": "vite",
-  "build": {
-    "env": {
-      "NODE_VERSION": "18.x"
-    }
-  },
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 } 
