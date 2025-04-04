@@ -326,7 +326,7 @@ const MainContentWrapper = () => {
 // Main App Component
 const App = () => {
   return (
-    <Router>
+    <Router basename="/UTeach">
       <Routes>
         <Route path="/" element={<MainContentWrapper />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
